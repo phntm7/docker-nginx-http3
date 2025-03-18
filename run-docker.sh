@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
 docker run --rm \
   -p 0.0.0.0:8888:80 \
   -p 0.0.0.0:8889:443/tcp \
@@ -16,4 +17,4 @@ docker run --rm \
   -v "$PWD/tests/localhost.crt":/etc/nginx/ssl/localhost.crt:ro \
   -v "$PWD/tests/localhost.key":/etc/nginx/ssl/localhost.key:ro \
  --name test_nginx \
-  -t macbre/nginx
+  -t phntm7/nginx
