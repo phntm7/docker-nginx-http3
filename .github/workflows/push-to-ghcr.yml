@@ -1,9 +1,8 @@
 name: Build and publish a Docker image to ghcr.io and Docker Hub
 on:
-
   # publish on releases (tagged as "x.y.z" - "v" prefix is removed)
   release:
-    types: [ published ]
+    types: [published]
 
   # publish on pushes to the main branch (tagged as "master")
   push:
@@ -18,9 +17,9 @@ jobs:
       - uses: actions/checkout@v4
 
       # https://github.com/marketplace/actions/push-to-ghcr
-      - name: Build and publish a Docker image for macbre/nginx-http3
+      - name: Build and publish a Docker image for phntm7/nginx-http3
         uses: macbre/push-to-ghcr@v14
         with:
-          image_name: macbre/nginx-http3
+          image_name: phntm7/nginx-http3
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          docker_io_token: ${{ secrets.DOCKER_IO_ACCESS_TOKEN }}
+          # docker_io_token: ${{ secrets.DOCKER_IO_ACCESS_TOKEN }}
