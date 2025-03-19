@@ -270,6 +270,7 @@ RUN \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
 
 COPY nginx.conf /etc/nginx/nginx.conf
+COPY mime.types /etc/nginx/mime.types
 # COPY config/ssl_common.conf /etc/nginx/conf.d/ssl_common.conf
 
 # show env
